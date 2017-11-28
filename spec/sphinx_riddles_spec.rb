@@ -14,6 +14,10 @@ describe(Riddle) do
       expect(new_riddle.answer_checker()).to(eq("Your answer is correct"))
     end
 
+    it("returns true if the answer is dog") do
+      new_riddle = Riddle.new("To you, rude would I never be, Though I flag my tongue for all to see.","dog")
+      expect(new_riddle.answer_checker()).to(eq("Your answer is correct"))
+    end
 
   end
 end
