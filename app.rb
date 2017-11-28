@@ -5,13 +5,17 @@ require('./lib/sphinx_riddles')
 require('pry')
 
 get('/') do
-  erb(:input)
+  @@question = "When I am young, I go on four legs, then I go on two legs, then I go on three legs, and then I die."
+  erb(:question1)
 end
 
 post('/output') do
-  @question = params.fetch("question")
   @answer = params.fetch("answer")
-  new_riddle = Riddle.new(@question, @answer)
+  new_riddle = Riddle.new(@@question, @answer)
   @result = new_riddle.answer_checker()
-  erb(:output)
+  if (@result == "Your answer is correct")
+    erb(:success)
+  else
+    erb(:failure)
+  end
 end

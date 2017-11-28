@@ -1,0 +1,11 @@
+<h1>Find out the correct answer to Sphinx Riddle!</h1>
+
+<form action="/output" method="post">
+
+  <h2><%= @@question %></h2>
+  <h3>Choose the answer:</h3>
+  <input type="radio" name="answer" value="asteroids"> asteroids<br>
+  <input type="radio" name="answer" value="human" checked> human<br>
+  <input type="radio" name="answer" value="dog"> dog<br>
+  <button type="submit" class="btn">Go!</button>
+</form>
