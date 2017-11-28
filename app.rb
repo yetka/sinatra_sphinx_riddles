@@ -5,7 +5,9 @@ require('./lib/sphinx_riddles')
 require('pry')
 
 get('/') do
-  @@question = "When I am young, I go on four legs, then I go on two legs, then I go on three legs, and then I die."
+  questions = ["When I am young, I go on four legs, then I go on two legs, then I go on three legs, and then I die.", "Large as a mountain, small as a pea, Endlessly swimming in a waterless sea.","To you, rude would I never be, Though I flag my tongue for all to see."]
+  @@question = questions[rand(0..2)]
+
   erb(:question1)
 end
 
